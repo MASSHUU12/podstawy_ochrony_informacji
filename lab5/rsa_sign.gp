@@ -15,18 +15,14 @@ while (gcd(e, phin) != 1, e = e + 1);
 
 d = lift(Mod(e, phin)^(-1));
 
-(e * d) % phin;
-log(n) / log(27);
-
 m = 420
+
 \\ Encryption
 E(x) = lift(modexp(x, e, n));
 \\ Decryption
 D(x) = lift(modexp(x, d, n));
 secret = E(m);
 D(secret)
-m + O(27^5);
-factor(n)
 
 \\ Signing
 mx = h(m);
