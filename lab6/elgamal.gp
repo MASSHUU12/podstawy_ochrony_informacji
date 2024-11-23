@@ -1,10 +1,10 @@
 p = nextprime(random(10^30));
 g = 3;                       \\ Generator
-x = random(p - 3) + 1;       \\ Private key (1 <= x <= p - 2)
+x = random(p - 2) + 1;       \\ Private key (1 <= x <= p - 2)
 h = Mod(g, p)^x;             \\ Public key
 
 encrypt(m, h, p) = {
-  k = random(p - 3) + 1;     \\ Random session key (1 <= k <= p - 2)
+  k = random(p - 2) + 1;     \\ Random session key (1 <= k <= p - 2)
   c1 = Mod(g, p)^k;
   c2 = Mod(m * h^k, p);
   return([c1, c2]);
