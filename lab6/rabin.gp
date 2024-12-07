@@ -18,12 +18,12 @@ print("Kryptogram: "c);
 a = lift(Mod(c, p)^((p + 1)/4));
 b = lift(Mod(c, q)^((q + 1)/4));
 
-inv_q = Mod(q, p)^(-1);
-inv_p = Mod(p, q)^(-1);
+inv_q = lift(Mod(q, p)^(-1));
+inv_p = lift(Mod(p, q)^(-1));
 
 m1 = (a * q * inv_q + b * p * inv_p) % n;
 m2 = n - m1;
-m3 = (-a * q * inv_q + b * p * inv_p) % n;
+m3 = (a * q * inv_q - b * p * inv_p) % n;
 m4 = n - m3;
 
 possible_m = [m1, m2, m3, m4];
